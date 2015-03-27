@@ -5,10 +5,19 @@ import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
 router.register(r'tasks', views.TaskViewSet)
 router.register(r'jobs', views.JobViewSet)
-
+router.register(r'task_attachments', views.TaskAttachmentViewSet)
+router.register(r'job_attachments', views.JobAttachmentViewSet)
+router.register(r'answer_attachments', views.AnswerAttachmentViewSet)
+router.register(r'answers', views.AnswerViewSet)
+router.register(r'verifications', views.VerificationViewSet)
+router.register(r'task_comments', views.TaskCommentViewSet)
+router.register(r'verification_comments', views.VerificationCommentViewSet)
+router.register(r'job_comments', views.JobCommentViewSet)
+router.register(r'balances', views.BalanceViewSet)
+router.register(r'transactions', views.TransactionViewSet)
+router.register(r'tags', views.TagViewSet)
 
 
 # Wire up our API using automatic URL routing.
