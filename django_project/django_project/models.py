@@ -60,7 +60,7 @@ class Verification(models.Model):
     id = models.AutoField(primary_key=True)
     created = models.DateTimeField(auto_now_add=True)
     creator = models.ForeignKey(User)
-    successful = models.BooleanField()
+    successful = models.BooleanField(default=False)
 
 
 class Comment(models.Model):
@@ -96,8 +96,8 @@ class Balance(models.Model):
 class Transaction(models.Model):
     id = models.AutoField(primary_key=True)
     created = models.DateTimeField(auto_now_add=True)
-    sender = models.ForeignKey(User)
-    receiver = models.ForeignKey(User)
+    sender = models.ForeignKey(User, related_name='transactions_sent')
+    receiver = models.ForeignKey(User, related_name='transactions_received')
 
 
 class Tag(models.Model):
