@@ -7,7 +7,7 @@ class Job(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     due = models.DateTimeField()
     owner = models.ForeignKey(User)
-    title = models.CharField(min_length=3, max_length=250)
+    title = models.CharField(max_length=250)
     description = models.TextField(blank=True, default='')
     unit_price = models.FloatField()
     verification_price = models.FloatField(default=0.0)
@@ -21,7 +21,7 @@ class Job(models.Model):
 class Attachment(models.Model):
     id = models.AutoField(primary_key=True)
     created = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(min_length=3, max_length=250)
+    title = models.CharField(max_length=250)
     content = models.BinaryField()
 
     class Meta:
