@@ -67,7 +67,7 @@ class Comment(models.Model):
     id = models.AutoField(primary_key=True)
     created = models.DateTimeField(auto_now_add=True)
     creator = models.ForeignKey(User)
-    title = models.CharField(min_length=3, max_length=250)
+    title = models.CharField(max_length=250)
     text = models.TextField(blank=True, default='')
 
     class Meta:
