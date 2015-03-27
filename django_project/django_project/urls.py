@@ -7,6 +7,8 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'tasks', views.TaskViewSet)
+router.register(r'jobs', views.JobViewSet)
+
 
 
 # Wire up our API using automatic URL routing.
