@@ -32,19 +32,15 @@ class JobAttachment(Attachment):
     job = models.ForeignKey(Job)
 
 
-class TaskAttachment(Attachment):
-    task = models.ForeignKey(Task)
-
-
-class AnswerAttachment(Attachment):
-    answer = models.ForeignKey(Answer)
-
-
 class Task(models.Model):
     id = models.AutoField(primary_key=True)
     job = models.ForeignKey(Job)
     title = models.CharField(max_length=250, blank=True, default='')
     description = models.TextField()
+
+
+class TaskAttachment(Attachment):
+    task = models.ForeignKey(Task)
 
 
 class Answer(models.Model):
@@ -54,6 +50,10 @@ class Answer(models.Model):
     task = models.ForeignKey(Task)
     title = models.CharField(max_length=250, blank=True, default='')
     text = models.TextField()
+
+
+class AnswerAttachment(Attachment):
+    answer = models.ForeignKey(Answer)
 
 
 class Verification(models.Model):
