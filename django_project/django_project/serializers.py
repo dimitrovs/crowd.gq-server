@@ -85,4 +85,4 @@ class TransactionSerializer(serializers.HyperlinkedModelSerializer):
 class TagSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Tag
-        fields = ('id', 'name', 'parent', 'tasks', 'followers')
+        fields = ('id', 'name', 'tasks', 'followers')
