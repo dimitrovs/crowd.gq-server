@@ -60,6 +60,7 @@ class Verification(models.Model):
     id = models.AutoField(primary_key=True)
     created = models.DateTimeField(auto_now_add=True)
     creator = models.ForeignKey(User)
+    answer = models.ForeignKey(Answer)
     successful = models.BooleanField(default=False)
 
 
