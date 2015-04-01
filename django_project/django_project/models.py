@@ -98,12 +98,13 @@ class Transaction(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     sender = models.ForeignKey(User, related_name='transactions_sent')
     receiver = models.ForeignKey(User, related_name='transactions_received')
+    amount = models.FloatField()
 
 
 class Tag(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()
-    parent = models.ForeignKey('self')
+    parent = models.ForeignKey('self', blank=True)
     tasks = models.ManyToManyField(Task)
     followers = models.ManyToManyField(User)
 
