@@ -105,6 +105,6 @@ class Tag(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField()
     #parent = models.ForeignKey('self', blank=True)
-    tasks = models.ManyToManyField(Task)
+    jobs = models.ManyToManyField(Job)
     followers = models.ManyToManyField(User)
 
